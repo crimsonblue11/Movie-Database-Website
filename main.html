@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Database Interface</title>
+		<script type="text/javascript" src="cwscript.js"></script>
+		<link rel="stylesheet" type="text/css" href="cwstyle.css">
+	</head>
+	<body onload="loadup()">
+		<div id="forms" class="centre">
+			<div class="tab">
+				<button class="tablinks" onclick="openTab(event,'Actor')">Actor</button>
+				<button class="tablinks" onclick="openTab(event,'Movie')">Movie</button>
+			</div>
+
+			<div id="Actor" class="tabcontent">
+				<div class="tab">
+					<button class="subTablinks" onclick="openSubTab(event,'actAdd')">Add</button>
+					<button class="subTablinks" onclick="openSubTab(event,'actSearch')">Search</button>
+					<button class="subTablinks" onclick="openSubTab(event,'actDelete')">Delete</button>
+				</div>
+				<form id="actAdd" class="subTabContent" method="post" action="addact.php" onsubmit="return actor_validate(this)">
+					<h1>Add to actor table</h1>
+					Name: <br><input type="text" name="actName"><br>
+					<br>
+					<input type="submit" value="Submit">
+				</form>
+
+				<form id="actSearch" class="subTabContent" method="post" action="searchact.php" onsubmit="return actor_validate(this)">
+					<br>
+					<h1>Search actor table</h1>
+					Name: <input type="text" name="actName"><br>
+					<br>
+					<input type="submit" value="Search">
+				</form>
+
+				<form id="actDelete" class="subTabContent" method="post" action="deleteact.php" onsubmit="return actor_validate(this)">
+					<br>
+					<h1>Delete from actor table</h1>
+					Name: <input type="text" name="actName"><br>
+					<br>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+
+			<div id="Movie" class="tabcontent">
+				<div class="tab">
+					<button class="subTablinks" onclick="openSubTab(event,'movieAdd')">Add</button>
+					<button class="subTablinks" onclick="openSubTab(event,'movieSearch')">Search</button>
+					<button class="subTablinks" onclick="openSubTab(event,'movieDelete')">Delete</button>
+				</div>
+				<form id="movieAdd" class="subTabContent" method="post" action="addmovie.php" onsubmit="return movie_validate(this)">
+					<h1>Add to movie table</h1>
+					Title: <br><input type="text" name="movieName"><br>
+					Actor: <br><input type="text" name="movieAct"><br>
+					Year: <br><input type="number" min="1900" max="2050" step="1" name="movieYear"><br>
+					Genre: <br><input type="text" name="movieGenre"><br>
+					Price: <br><input type="number" step=".01" name="moviePrice"><br>
+					<br>
+					<input type="submit" value="Submit">
+				</form>
+
+				
+				<form id="movieSearch" class="subTabContent" method="post" action="searchmovie.php" onsubmit="return movie_title_validate(this)">
+					<h1>Search movie table</h1>
+					Title: <br><input type="text" name="movieName"><br>
+					<br>
+					<input type="submit" value="Search">
+				</form>
+
+				<form id="movieDelete" class="subTabContent" method="post" action="deletemovie.php" onsubmit="return movie_title_validate(this)">
+					<h1>Delete from movie table</h1>
+					Title: <br><input type="text" name="movieName"><br>
+					<br>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+
+		</div>
+	</body>
+</html>

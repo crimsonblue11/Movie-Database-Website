@@ -1,0 +1,43 @@
+body {
+	font-family: Arial;
+	background-color:rgb(0, 80, 160);
+}
+
+#forms {
+	padding: 30px;
+	background-color: rgb(196, 247, 224);
+	border: solid 4px rgb(0, 0, 126);
+	box-shadow: 2px 2px;
+}
+
+.centre {
+	margin: auto;
+	width: 50%;
+}
+
+.tab {
+	overflow: hidden;
+	border-bottom: 1px solid;
+}
+
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+
+.tab button:hover {
+	background-color: rgb(153, 199, 178);
+}
+
+.tab button.active {
+	background-color: rgb(122, 155, 140);
+}
+
+.tabcontent {
+	padding: 6px 12px;
+}
